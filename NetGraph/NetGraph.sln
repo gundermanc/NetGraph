@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGraph", "NetGraph\NetGraph.csproj", "{EE853251-414F-4013-9429-13B1E0447D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGraph.Unittest", "NetGraph.Unittest\NetGraph.Unittest.csproj", "{60927875-2D80-4456-ADF4-C76CBBFB054D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE853251-414F-4013-9429-13B1E0447D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE853251-414F-4013-9429-13B1E0447D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE853251-414F-4013-9429-13B1E0447D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE853251-414F-4013-9429-13B1E0447D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60927875-2D80-4456-ADF4-C76CBBFB054D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60927875-2D80-4456-ADF4-C76CBBFB054D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60927875-2D80-4456-ADF4-C76CBBFB054D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60927875-2D80-4456-ADF4-C76CBBFB054D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
