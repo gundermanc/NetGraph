@@ -21,12 +21,12 @@ namespace NetGraph
         private readonly Guid guid;
         private readonly Uri uri;
         private readonly string name;
-        private ImmutableDictionary<Guid, INetEdge> edges;
+        private IReadOnlyDictionary<Guid, INetEdge> edges;
 
         /// <summary>
         /// A dictionary of edges from this computer.
         /// </summary>
-        public IDictionary<Guid, INetEdge> Edges
+        public IReadOnlyDictionary<Guid, INetEdge> Edges
         {
             get
             {

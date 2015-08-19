@@ -33,6 +33,6 @@ namespace NetGraph
         /// <summary>
         /// A mapping from NetNode Guid to the edge to that node.
         /// </summary>
-        IDictionary<Guid, INetEdge> Edges { get; }
+        IReadOnlyDictionary<Guid, INetEdge> Edges { get; }
     }
 }
