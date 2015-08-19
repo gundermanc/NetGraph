@@ -33,6 +33,22 @@ namespace NetGraph
         }
 
         /// <summary>
+        /// Starts or stops the NetGraphApplication service.
+        /// </summary>
+        public bool IsRunning
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        /// <summary>
         /// Creates a new NetGraphApplication instance.
         /// </summary>
         /// <param name="netProvider">
@@ -48,6 +64,15 @@ namespace NetGraph
 
             this.netProvider = netProvider;
             this.graph = new NetGraph(name, uri);
+        }
+
+        /// <summary>
+        /// Stops service and cleans up resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.IsRunning = false;
+            this.netProvider.Dispose();
         }
     }
 }

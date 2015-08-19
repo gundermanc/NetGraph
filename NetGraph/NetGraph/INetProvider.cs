@@ -7,7 +7,9 @@
 
 namespace NetGraph
 {
-    public interface INetProvider
+    using System;
+
+    public interface INetProvider : IDisposable
     {
         // TODO
     }
