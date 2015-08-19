@@ -46,10 +46,13 @@
   <ItemGroup>
     <Compile Include="INetEdge.cs" />
     <Compile Include="INetGraph.cs" />
+    <Compile Include="INetGraphApplication.cs" />
     <Compile Include="INetNode.cs" />
+    <Compile Include="INetProvider.cs" />
     <Compile Include="Internal\CodeContractExtensions.cs" />
     <Compile Include="NetEdge.cs" />
     <Compile Include="NetGraph.cs" />
+    <Compile Include="NetGraphApplication.cs" />
     <Compile Include="NetNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

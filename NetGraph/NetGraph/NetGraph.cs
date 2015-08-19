@@ -50,7 +50,7 @@ namespace NetGraph
         /// </summary>
         /// <param name="name">The user friendly name for this computer.</param>
         /// <param name="uri">The uri to this computer.</param>
-        public NetGraph(string name, Uri uri) : 
+        internal NetGraph(string name, Uri uri) : 
             this(new INetNode[] { CreateAndVerifyThisNode(name, uri) })
         {
         }

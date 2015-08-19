@@ -13,7 +13,7 @@ namespace NetGraph
     /// <summary>
     /// The NetGraph interface.
     /// </summary>
-    interface INetGraph
+    public interface INetGraph
     {
         /// <summary>
         /// A reference to this computer's node.
