@@ -10,6 +10,8 @@ namespace NetGraph
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
+    using Internal;
+    using System.Linq;
 
     /// <summary>
     /// Represents a directed graph of interconnected computers. Each node is a computer and
@@ -44,13 +46,51 @@ namespace NetGraph
         }
 
         /// <summary>
+        /// Creates an empty NetGraph with only this computer.
+        /// </summary>
+        /// <param name="name">The user friendly name for this computer.</param>
+        /// <param name="uri">The uri to this computer.</param>
+        public NetGraph(string name, Uri uri) : 
+            this(new INetNode[] { CreateAndVerifyThisNode(name, uri) })
+        {
+        }
+
+        /// <summary>
         /// Creates a new NetGraph representation from raw data.
         /// </summary>
-        /// <param name="thisNode">The node for this computer.</param>
-        /// <param name="nodes">A list of all nodes.</param>
-        public NetGraph(INetNode thisNode, IEnumerable<INetNode> nodes)
+        /// <param name="nodes">
+        /// A list of all nodes. The first node is assumed to be this computer.
+        /// </param>
+        private NetGraph(IEnumerable<INetNode> nodes)
         {
+            nodes.AssertNotNull(nameof(nodes));
+
+            if (nodes.FirstOrDefault() != null)
+            {
+                this.thisNode = nodes.First();
+            }
+
             this.nodes = nodes.ToImmutableDictionary(edge => edge.Guid, edge => edge);
+        }
+
+        /// <summary>
+        /// Creates the ThisNode NetNode object for this computer and verifies the inputs.
+        /// </summary>
+        /// <exception cref="ArgumentException">
+        /// Thrown if name is null or empty.
+        /// </exception>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if the uri is null.
+        /// </exception>
+        /// <param name="name">A user friendly name for this computer.</param>
+        /// <param name="uri">The uri to this computer, cannot be null.</param>
+        /// <returns>A new node for the specified inputs.</returns>
+        private static INetNode CreateAndVerifyThisNode(string name, Uri uri)
+        {
+            name.AssertNotNullOrEmptyOrWhitespace(nameof(name));
+            uri.AssertNotNull(nameof(uri));
+
+            return new NetNode(Guid.NewGuid(), name, uri, Enumerable.Empty<INetEdge>());
         }
     }
 }
