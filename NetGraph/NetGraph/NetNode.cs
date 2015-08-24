@@ -76,9 +76,9 @@ namespace NetGraph
         /// <param name="edges">Edges from this computer to others.</param>
         public NetNode(Guid guid, string name, Uri uri, IEnumerable<INetEdge> edges)
         {
-            guid.AssertNotNull(nameof(guid));
-            name.AssertNotNullOrEmptyOrWhitespace(nameof(name));
-            edges.AssertNotNull(nameof(edges));
+            guid.AssertNotNull("guid");
+            name.AssertNotNullOrEmptyOrWhitespace("name");
+            edges.AssertNotNull("edges");
 
             this.guid = guid;
             this.name = name;

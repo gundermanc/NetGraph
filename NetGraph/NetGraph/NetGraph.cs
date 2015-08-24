@@ -63,7 +63,7 @@ namespace NetGraph
         /// </param>
         private NetGraph(IEnumerable<INetNode> nodes)
         {
-            nodes.AssertNotNull(nameof(nodes));
+            nodes.AssertNotNull("nodes");
 
             if (nodes.FirstOrDefault() != null)
             {
@@ -87,8 +87,8 @@ namespace NetGraph
         /// <returns>A new node for the specified inputs.</returns>
         private static INetNode CreateAndVerifyThisNode(string name, Uri uri)
         {
-            name.AssertNotNullOrEmptyOrWhitespace(nameof(name));
-            uri.AssertNotNull(nameof(uri));
+            name.AssertNotNullOrEmptyOrWhitespace("name");
+            uri.AssertNotNull("uri");
 
             return new NetNode(Guid.NewGuid(), name, uri, Enumerable.Empty<INetEdge>());
         }
