@@ -63,8 +63,8 @@ namespace NetGraph
         /// </param>
         public NetEdge(INetNode origin, INetNode destination, bool isBidirectional)
         {
-            origin.AssertNotNull("origin");
-            destination.AssertNotNull("destination");
+            origin.AssertNotNull(nameof(origin));
+            destination.AssertNotNull(nameof(destination));
 
             this.origin = origin;
             this.destination = destination;

@@ -58,9 +58,9 @@ namespace NetGraph
         /// <param name="uri">The URI for this computer.</param>
         public NetGraphApplication(INetProvider netProvider, string name, Uri uri)
         {
-            netProvider.AssertNotNull("netProvider");
-            name.AssertNotNullOrEmptyOrWhitespace("netProvider");
-            uri.AssertNotNull("uri");
+            netProvider.AssertNotNull(nameof(netProvider));
+            name.AssertNotNullOrEmptyOrWhitespace(nameof(netProvider));
+            uri.AssertNotNull(nameof(uri));
 
             this.netProvider = netProvider;
             this.graph = new NetGraph(name, uri);
